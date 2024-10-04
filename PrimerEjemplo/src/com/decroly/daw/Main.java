@@ -1,5 +1,6 @@
 package com.decroly.daw;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -43,35 +44,80 @@ public class Main {
 		 */
 		
 		//Suma de 1/n2
-		double suma = 0.0;
+//		double suma = 0.0;
+//		
+//		for(int i = 1; i <= 1000; i++)
+//		{
+//			suma = suma + (1/Math.pow(i, 2));
+//		}
+//		
+//		System.out.println("La suma es: "+suma);
+//		
+//		
+//		
+//		double suma2 = 0.0;
+//		int i = 1001;
+//		while(i <= 1000)
+//		{
+//			suma2 = suma2 + (1/Math.pow(i, 2));
+//			i ++; // iterator = iterator + 1
+//		}
+//		System.out.println("La suma es: "+suma2);
+//		
+//		
+//		double suma3 = 0.0;
+//		int iter = 1001;
+//		
+//		do {
+//			suma3 = suma3 + (1/Math.pow(iter, 2));
+//			iter ++;
+//		}while(iter <= 1000);
+//		System.out.println("La suma es: "+suma3);
 		
-		for(int i = 1; i <= 1000; i++)
-		{
-			suma = suma + (1/Math.pow(i, 2));
+		//Clase 2-10-2024
+		double [][] matriz = new double[3][3];
+		matriz[0][0] = 1.0;
+		matriz[0][1] = 2.0;
+		matriz[0][2] = 3.0;
+		
+		matriz[1][0] = 4.0;
+		matriz[1][1] = 5.0;
+		matriz[1][2] = 6.0;
+
+		matriz[2][0] = 7.0;
+		matriz[2][1] = 8.0;
+		matriz[2][2] = 9.0;
+		
+		for(int i = 0; i < matriz.length; i++) {
+			for(int j = 0; j < matriz[i].length; j++) {
+				System.out.println("Posicion ("+i+","+j+"): "+matriz[i][j]);
+				
+			}
 		}
 		
-		System.out.println("La suma es: "+suma);
+		double[] vector1 = new double[3];
+		//Arrays.fill(vector1, 3.0);
 		
+		double [] vector2 = new double[3];
+		//Arrays.fill(vector2, 3.0);
 		
+		System.out.println("Son iguales: "+(Arrays.equals(vector1,vector2)));
 		
-		double suma2 = 0.0;
-		int i = 1001;
-		while(i <= 1000)
-		{
-			suma2 = suma2 + (1/Math.pow(i, 2));
-			i ++; // iterator = iterator + 1
+		String h1 = "Hola";
+		String h2 = "HOLA";
+		
+		if(h1 == h2) {
+			System.out.println("Son iguales");
+		}else {
+			System.out.println("Son distintos");
 		}
-		System.out.println("La suma es: "+suma2);
 		
+		if(h1.equalsIgnoreCase(h2)) {
+			System.out.println("Son iguales");
+		}else {
+			System.out.println("Son distintos");
+		}
 		
-		double suma3 = 0.0;
-		int iter = 1001;
-		
-		do {
-			suma3 = suma3 + (1/Math.pow(iter, 2));
-			iter ++;
-		}while(iter <= 1000);
-		System.out.println("La suma es: "+suma3);
 		
 	}
 
