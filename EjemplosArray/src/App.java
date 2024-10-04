@@ -7,10 +7,6 @@ public class App {
 
         String [] alumnos2 = new String [alumnos.length];
 
-
-{
-
-}
         for(int i = 0; i < alumnos.length; i++){
             alumnos [i] = "Alumno_"+i;
         }
@@ -25,14 +21,14 @@ public class App {
         //     contador++;
         // }
 
-        //for each
-        // for(String al : alumnos){
-        //     System.out.println(al);
-        // }
+        //for each ejemplos
+        for(String al : alumnos){
+            System.out.println(al);
+        }
 
-        // for(int nota : notas){
-        //     System.out.println(nota);
-        // }
+        for(int nota : notas){
+            System.out.println(nota);
+        }
 
         alumnos[0] = "Soy alumno nuevo";
 
@@ -42,10 +38,6 @@ public class App {
             System.out.println(alumnos2[i]);
 
         }
-
-
-
-
 
     }
 }
