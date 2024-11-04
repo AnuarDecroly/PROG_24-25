@@ -10,6 +10,11 @@ public class App {
         String opcion = "";
         Scanner reader = new Scanner(System.in);
 
+        String miText = "Hola aloh";
+        boolean isPalindrome = validPalindrome(miText.replace(" ", "").toLowerCase());
+
+        System.out.println("Es palindromo: "+isPalindrome);
+
         do{
             System.out.println("1 - Insertar cliente");
             System.out.println("2 - Ver clinetes");
@@ -82,4 +87,15 @@ public class App {
 
         }while(!opcion.equals("5"));
     }
+
+
+
+    public static boolean validPalindrome(String s) {
+        for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
+                return false;
+            }
+        }
+        return true;
+    } 
 }
