@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
+
+        Biblioteca biblio = new Biblioteca("Parque Jado", "General Davila 77", "jado@municipal.es", "942334567", 250);
+
+       
+
         //String titulo, String autor, String isbn, String fechaPublicacion
         Libro hobbit = new Libro("El Hobbit", "JRR Tolkien", "97800482318", "11/12/1937");
+
+        biblio.insertarLibro(hobbit);
 
         Scanner reader = new Scanner(System.in);
 
@@ -20,9 +27,12 @@ public class App {
         String fPublicacion = reader.nextLine();
         
         Libro edesla = new Libro(titulo, autor, isbn, fPublicacion);
+        biblio.insertarLibro(edesla);
 
-        System.out.println(hobbit.infoLibro());
-        System.out.println(edesla.infoLibro());
+        System.out.println(biblio.infoBiblioteca());
+
+        System.out.println("Informacion de la coleccion de libros");
+        System.out.println(biblio.infoColeccion());
 
 
         

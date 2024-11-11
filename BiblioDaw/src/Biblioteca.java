@@ -1,6 +1,10 @@
 
 
+
+
 public class Biblioteca {
+
+    private static int contador = 0;
 
     //Campos o Atributos
     private int id;
@@ -14,13 +18,23 @@ public class Biblioteca {
 
     //Constructor
     public Biblioteca(String nombre, String direccion, String email, String nTelefono, int nLibros){
-        this.id = 0; //Esto en proximos capitulos
+        this.id = this.contador;
+        this.contador++;
+
         this.nombre = nombre;
         this.direccion = direccion;
         this.email =  email;
         this.nTelefono = nTelefono;
         this.libros = new Libro[nLibros];
         this.nElementosActuales = 0;
+    }
+
+    public static int getContador(){
+        return contador;
+    }
+
+    public int getId(){
+        return this.id;
     }
 
     public String getNombre(){
@@ -49,8 +63,33 @@ public class Biblioteca {
             this.nElementosActuales++;
             isAdd = true;
         }
-
         return isAdd;
+        
+    }
+
+    public boolean eliminarLibro(Libro l1){
+        boolean isRemoved = false;
+        if(l1 != null){
+            int index = -1;
+            for(int i = 0; i < this.libros.length; i++){
+                if(this.libros[i] != null){
+                    if(this.libros[i].getIsbn().equalsIgnoreCase(l1.getIsbn())){
+                        index = i;
+                    }
+                }
+            }
+            if(index != -1){
+                this.libros[index] = null;
+                isRemoved = true;
+                //recolocar el array
+                for(int i = index+1; i < this.libros.length; i++){
+                    this.libros[i-1] = this.libros[i];
+                }
+                this.libros[this.libros.length-1] = null;
+                this.nElementosActuales--;
+            }
+        }
+        return isRemoved;
     }
 
 
@@ -58,9 +97,24 @@ public class Biblioteca {
         //Metodo para realizar interpolacion en los strings en java
         String info = String.format("Bibilioteca - Nombre: %s, Direccion: %s , Email: %s, Numero telefono: %s"
             , this.nombre, this.direccion, this.email, this.nTelefono);
-        
         return info;
     }
+
+    public String infoColeccion(){
+        String result = "";
+        if(this.nElementosActuales > 0){
+            for(Libro l : this.libros){
+                if(l != null){
+                    result += l.infoLibro() + "\n";
+                }
+            }
+        }
+        else{
+            result = "No hay elementos en la biblio";
+        }
+        return result;
+    }
+
 
 
 
