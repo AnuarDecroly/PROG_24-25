@@ -10,4 +10,14 @@ public class Velero extends VehiculoMaritimo{
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @Override
+    public boolean arrancar() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public boolean detener() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
 }
