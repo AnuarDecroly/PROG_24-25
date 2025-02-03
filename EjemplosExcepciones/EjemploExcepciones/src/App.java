@@ -27,13 +27,14 @@ public class App {
 
         //Segundo ejemplo
         Scanner lector = new Scanner(System.in);
-        System.out.println("Introduce radio de la circunferencia: ");
-        String num = lector.nextLine();
+
 
         int radio = -1;
         int radio2 = -1; 
 
         try {
+            System.out.println("Introduce radio de la circunferencia: ");
+            String num = lector.nextLine();
             radio = Integer.parseInt(num);
             System.out.println("Introduce radio de la circunferencia 2: ");
             radio2 = lector.nextInt();
@@ -68,7 +69,7 @@ public class App {
             System.out.println("El fichero ha sido abierto");
         }
         
-         
+        
         System.out.println("Fin del programa"); 
     }
 }
