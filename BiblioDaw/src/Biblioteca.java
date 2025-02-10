@@ -29,10 +29,18 @@ public class Biblioteca {
         this.nElementosActuales = 0;
     }
 
+    
+    /** 
+     * @return int
+     */
     public static int getContador(){
         return contador;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getId(){
         return this.id;
     }

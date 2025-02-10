@@ -32,19 +32,35 @@ public class Libro {
         this.edicion = edicion;
     }
 
+    
+    /** 
+     * @return String
+     */
     //Getters y Setters
     public String getTitulo(){
         return this.titulo;
     }
 
+    
+    /** 
+     * @return String
+     */
     public String getAutor(){
         return this.autor;
     }
 
+    
+    /** 
+     * @return int
+     */
     public int getNPaginas(){
         return this.nPaginas;
     }
 
+    
+    /** 
+     * @param nPaginas
+     */
     public void setNPaginas(int nPaginas){
         if(nPaginas > 0){
             this.nPaginas = nPaginas;

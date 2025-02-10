@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class App {
+    
+    /** 
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
         Biblioteca biblio = new Biblioteca("Parque Jado", "General Davila 77", "jado@municipal.es", "942334567", 250);
@@ -14,6 +19,19 @@ public class App {
 
         Scanner reader = new Scanner(System.in);
 
+        insertarLibroBiblio(biblio);
+
+        System.out.println(biblio.infoBiblioteca());
+
+        System.out.println("Informacion de la coleccion de libros");
+        System.out.println(biblio.infoColeccion());
+
+
+        
+    }
+
+    private static void insertarLibroBiblio(Biblioteca biblio) {
+        Scanner reader = new Scanner(System.in);
         System.out.println("Introduzca el titulo");
         String titulo = reader.nextLine();
 
@@ -28,13 +46,5 @@ public class App {
         
         Libro edesla = new Libro(titulo, autor, isbn, fPublicacion);
         biblio.insertarLibro(edesla);
-
-        System.out.println(biblio.infoBiblioteca());
-
-        System.out.println("Informacion de la coleccion de libros");
-        System.out.println(biblio.infoColeccion());
-
-
-        
     }
 }
