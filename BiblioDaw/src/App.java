@@ -5,6 +5,8 @@ public class App {
     /** 
      * @param args
      * @throws Exception
+     * @author Anuar Khan Ali
+     * @version 1.0.1
      */
     public static void main(String[] args) throws Exception {
 
@@ -29,7 +31,10 @@ public class App {
 
         
     }
-
+    /**
+     * @param biblio
+     * @throws Exception
+     */
     private static void insertarLibroBiblio(Biblioteca biblio) {
         Scanner reader = new Scanner(System.in);
         System.out.println("Introduzca el titulo");
