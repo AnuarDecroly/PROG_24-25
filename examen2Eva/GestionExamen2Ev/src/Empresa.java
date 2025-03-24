@@ -1,9 +1,12 @@
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Empresa {
+
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
     private String nombreEmpresa;
     private String cif;
@@ -201,7 +204,7 @@ public class Empresa {
         sb.append("Empresa{");
         sb.append("nombreEmpresa=").append(nombreEmpresa);
         sb.append(", cif=").append(cif);
-        sb.append(", fFundacion=").append(fFundacion);
+        sb.append(", fFundacion=").append(fFundacion.format(formatter));
         sb.append(", trabajadores=").append(trabajadores);
         sb.append('}');
         return sb.toString();
