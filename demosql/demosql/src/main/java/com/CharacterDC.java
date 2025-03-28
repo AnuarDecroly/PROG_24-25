@@ -74,6 +74,19 @@ public class CharacterDC {
         this.aligment = aligment;
     }
 
+    
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
+    public void setImage2(String image2) {
+        this.image2 = image2;
+    }
+
+    public void setImage3(String image3) {
+        this.image3 = image3;
+    }
+
     @Override
     public String toString() {
         return "CharacterDC [id=" + id + ", heroName=" + heroName + ", fullName=" + fullName + ", gender=" + gender
