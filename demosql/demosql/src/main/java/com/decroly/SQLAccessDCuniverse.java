@@ -83,7 +83,6 @@ public class SQLAccessDCuniverse {
         return charactersNames;
     }
 
-
     public List<CharacterDC> getCharacterByNameAndAlterEgo(String characterName, String alterEgo){
         List<CharacterDC> charactersNames = new LinkedList<>();
 
@@ -162,7 +161,6 @@ public class SQLAccessDCuniverse {
         }
         return elements;
     }
-
 
     public int insertCharacter(CharacterDC character){
         int response = -1;

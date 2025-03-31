@@ -45,7 +45,7 @@ public class Main {
         System.out.println("Se han borrado " + response + " elementos");
 
         System.out.println("\n Insertar un Heroe");
-        CharacterDC newHero = new CharacterDC(-1, "Profesor Khan", "Anuar Khan", "male", "human", "neutral");
+        CharacterDC newHero = new CharacterDC(-1, "Profesor Khan Tierra 2", "Anuar Khan", "male", "human", "neutral");
         newHero.setImage1("https://www.ciempiesmagazine.com/wp-content/uploads/2016/04/doctor_strange_2016-HD.jpg");
         newHero.setImage2("https://www.ciempiesmagazine.com/wp-content/uploads/2016/04/doctor_strange_2016-HD.jpg");
         newHero.setImage3("https://www.ciempiesmagazine.com/wp-content/uploads/2016/04/doctor_strange_2016-HD.jpg");
@@ -57,7 +57,7 @@ public class Main {
         List<CharacterDC> charactersTest = miDcData.getCharacterByName("HeroTest");
 
         CharacterDC miHeroModidy = charactersTest.getFirst();
-        miHeroModidy.setFullName("Heroe Modificado2");
+        miHeroModidy.setFullName("Heroe Modificado3");
         miHeroModidy.setAligment("Neutral");
 
         miDcData.updateCharacterById(miHeroModidy);
