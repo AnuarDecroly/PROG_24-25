@@ -166,21 +166,20 @@ public class SQLAccessDCuniverse {
 
     public int insertCharacter(CharacterDC character){
         int response = -1;
-        String sqlStatement = "INSERT INTO characters (id, heroName, fullName, image1, image2, image3, gender, race, alignment)" + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sqlStatement = "INSERT INTO characters (heroName, fullName, image1, image2, image3, gender, race, alignment)" + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = SQLDataBaseManager.getConnection(); PreparedStatement statement = connection.prepareStatement(sqlStatement);) {
 
-            statement.setNString(1, null);
-            statement.setNString(2, character.getHeroName());
-            statement.setNString(3, character.getFullName());
-            statement.setNString(4, character.getImage1());
-            statement.setNString(5, character.getImage2());
-            statement.setNString(6, character.getImage3());
-            statement.setNString(7, character.getGender());
-            statement.setNString(8, character.getRace());
-            statement.setNString(9, character.getAligment());
+            statement.setNString(1, character.getHeroName());
+            statement.setNString(2, character.getFullName());
+            statement.setNString(3, character.getImage1());
+            statement.setNString(4, character.getImage2());
+            statement.setNString(5, character.getImage3());
+            statement.setNString(6, character.getGender());
+            statement.setNString(7, character.getRace());
+            statement.setNString(8, character.getAligment());
 
-            response = statement.executeUpdate(sqlStatement);
+            response = statement.executeUpdate();
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
