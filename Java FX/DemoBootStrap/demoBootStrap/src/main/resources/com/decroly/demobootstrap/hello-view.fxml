@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox id="mainbox" alignment="CENTER" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.decroly.demobootstrap.HelloController">
+
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Pane id="mainPanel" fx:id="Panel" prefHeight="433.0" prefWidth="360.0">
+      <children>
+         <HBox fx:id="mainPanel" prefHeight="60.0" prefWidth="360.0">
+            <children>
+                <Button onAction="#onHelloButtonClick" text="Hello!" textFill="#2f00ff">
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+                  <padding>
+                     <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                  </padding>
+               </Button>
+            
+                            <Label fx:id="welcomeText" textFill="#0805dd">
+                  <HBox.margin>
+                     <Insets left="30.0" top="10.0" />
+                  </HBox.margin>
+               </Label>
+            </children>
+         </HBox>
+         <Separator layoutY="60.0" prefHeight="13.0" prefWidth="359.0" />
+         <VBox layoutY="75.0" prefHeight="291.0" prefWidth="359.0">
+            <children>
+               <HBox prefHeight="35.0" prefWidth="359.0">
+                  <children>
+                     <Label text="Nombre">
+                        <HBox.margin>
+                           <Insets left="5.0" right="20.0" top="5.0" />
+                        </HBox.margin>
+                     </Label>
+                     <TextField id="nameText" fx:id="nameText" prefHeight="25.0" prefWidth="289.0">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </TextField>
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="20.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="200.0">
+                  <children>
+                     <Label text="Apellidos">
+                        <HBox.margin>
+                           <Insets left="5.0" right="15.0" top="5.0" />
+                        </HBox.margin>
+                     </Label>
+                     <TextField id="surnameText" fx:id="surnameText" prefHeight="25.0" prefWidth="289.0" />
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="20.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="359.0">
+                  <children>
+                     <Label text="Email ">
+                        <HBox.margin>
+                           <Insets left="5.0" right="32.0" top="5.0" />
+                        </HBox.margin>
+                     </Label>
+                     <TextField id="emailText" fx:id="emailText" prefHeight="25.0" prefWidth="289.0">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </TextField>
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="20.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="101.0" prefHeight="35.0" prefWidth="359.0">
+                  <children>
+                     <Label text="Teléfono">
+                        <HBox.margin>
+                           <Insets left="5.0" right="17.0" top="5.0" />
+                        </HBox.margin>
+                     </Label>
+                     <TextField id="phoneText" fx:id="phoneText" prefHeight="25.0" prefWidth="289.0">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </TextField>
+                  </children>
+                  <VBox.margin>
+                     <Insets bottom="20.0" />
+                  </VBox.margin>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="136.0" prefHeight="35.0" prefWidth="359.0">
+                  <children>
+                     <Label text="DNI">
+                        <HBox.margin>
+                           <Insets left="5.0" right="43.0" top="5.0" />
+                        </HBox.margin>
+                     </Label>
+                     <TextField id="dniText" fx:id="dniText" prefHeight="25.0" prefWidth="289.0">
+                        <HBox.margin>
+                           <Insets bottom="10.0" />
+                        </HBox.margin>
+                     </TextField>
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                  <children>
+                     <Button id="saveBtn" mnemonicParsing="false" onAction="#onSaveBtnAction" text="Guardar">
+                        <HBox.margin>
+                           <Insets right="20.0" />
+                        </HBox.margin>
+                     </Button>
+                     <Button id="cancelBtn" mnemonicParsing="false" onAction="#onCancelBtnAction" text="Cancelar" />
+                  </children>
+                  <VBox.margin>
+                     <Insets top="50.0" />
+                  </VBox.margin>
+               </HBox>
+            </children>
+         </VBox>
+      </children>
+   </Pane>
+</VBox>
