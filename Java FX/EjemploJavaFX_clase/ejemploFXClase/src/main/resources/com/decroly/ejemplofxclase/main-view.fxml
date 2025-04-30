@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="mainPanel" alignment="CENTER" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="20.0" style="-fx-background-color: #cccccc;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.decroly.ejemplofxclase.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <HBox fx:id="titlePanel" prefHeight="75.0" prefWidth="200.0">
+         <children>
+            <Label prefHeight="71.0" prefWidth="852.0" text="Inserte nueva Persona">
+               <font>
+                  <Font name="Arial Black" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox fx:id="nameHBox" alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Label text="Nombre">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="nameTextField" prefHeight="25.0" prefWidth="400.0">
+               <HBox.margin>
+                  <Insets left="25.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="surNameHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="291.0" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Label text="Apellidos">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="surNameTextField" prefHeight="25.0" prefWidth="400.0">
+               <HBox.margin>
+                  <Insets left="18.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="ageHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="319.0" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Label text="Edad">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="ageTextField" prefHeight="25.0" prefWidth="400.0">
+               <HBox.margin>
+                  <Insets left="52.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="emailHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="347.0" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Label text="Email">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="400.0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox fx:id="emailHBox1" alignment="CENTER_LEFT" layoutX="55.0" layoutY="375.0" prefHeight="35.0" prefWidth="200.0">
+         <children>
+            <Label text="Telefono">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="phoneTextField" prefHeight="25.0" prefWidth="400.0">
+               <HBox.margin>
+                  <Insets left="22.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox fx:id="buttonsHBox" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#onSaveButtonAction" style="-fx-background-color: #0099cc; -fx-text-fill: white;" text="Guardar">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#onCloseButtonAction" style="-fx-background-color: #FF6666; -fx-text-fill: white;" text="Cerrar">
+               <HBox.margin>
+                  <Insets left="25.0" right="70.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
