@@ -17,7 +17,7 @@
    <children>
       <HBox fx:id="titlePanel" prefHeight="75.0" prefWidth="200.0">
          <children>
-            <Label prefHeight="71.0" prefWidth="852.0" text="Inserte nueva Persona">
+            <Label prefHeight="71.0" prefWidth="852.0" text="Inserte nueva Persona" textFill="#2612a8">
                <font>
                   <Font name="Arial Black" size="48.0" />
                </font>
@@ -128,7 +128,7 @@
       <Separator prefWidth="200.0" />
       <HBox fx:id="buttonsHBox" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#onSaveButtonAction" style="-fx-background-color: #0099cc; -fx-text-fill: white;" text="Guardar">
+            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#onSaveButtonAction" styleClass="my-button" stylesheets="@../../../style.css" text="Guardar">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -136,7 +136,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#onCloseButtonAction" style="-fx-background-color: #FF6666; -fx-text-fill: white;" text="Cerrar">
+            <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#onCloseButtonAction" styleClass="my-button-secondary" stylesheets="@../../../style.css" text="Cerrar">
                <HBox.margin>
                   <Insets left="25.0" right="70.0" />
                </HBox.margin>

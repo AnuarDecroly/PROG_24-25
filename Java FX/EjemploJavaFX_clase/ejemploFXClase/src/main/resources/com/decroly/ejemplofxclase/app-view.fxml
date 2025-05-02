@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="my-background" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.decroly.ejemplofxclase.MainController">
+
+
+    <VBox fx:id="mainPanel" alignment="CENTER" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="my-background" stylesheets="@../../../style.css" visible="false">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <children>
+            <HBox fx:id="titlePanel" prefHeight="75.0" prefWidth="200.0">
+                <children>
+                    <Label prefHeight="71.0" prefWidth="852.0" styleClass="my-title" stylesheets="@../../../style.css" text="Inserte nueva Persona" textFill="#2612a8">
+                        <font>
+                            <Font name="Arial Black" size="48.0" />
+                        </font>
+                    </Label>
+                </children>
+            </HBox>
+            <Separator prefWidth="200.0" styleClass="my-separator" stylesheets="@../../../style.css" />
+            <HBox fx:id="nameHBox" alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="200.0">
+                <children>
+                    <Label text="Nombre">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="nameTextField" prefHeight="25.0" prefWidth="400.0">
+                        <HBox.margin>
+                            <Insets left="25.0" />
+                        </HBox.margin>
+                    </TextField>
+                </children>
+                <VBox.margin>
+                    <Insets left="25.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox fx:id="surNameHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="291.0" prefHeight="35.0" prefWidth="200.0">
+                <children>
+                    <Label text="Apellidos">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="surNameTextField" prefHeight="25.0" prefWidth="400.0">
+                        <HBox.margin>
+                            <Insets left="18.0" />
+                        </HBox.margin>
+                    </TextField>
+                </children>
+                <VBox.margin>
+                    <Insets left="25.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox fx:id="ageHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="319.0" prefHeight="35.0" prefWidth="200.0">
+                <children>
+                    <Label text="Edad">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="ageTextField" prefHeight="25.0" prefWidth="400.0">
+                        <HBox.margin>
+                            <Insets left="52.0" />
+                        </HBox.margin>
+                    </TextField>
+                </children>
+                <VBox.margin>
+                    <Insets left="25.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox fx:id="emailHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="347.0" prefHeight="35.0" prefWidth="200.0">
+                <children>
+                    <Label text="Email">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="400.0">
+                        <HBox.margin>
+                            <Insets left="50.0" />
+                        </HBox.margin>
+                    </TextField>
+                </children>
+                <VBox.margin>
+                    <Insets left="25.0" />
+                </VBox.margin>
+            </HBox>
+            <HBox fx:id="emailHBox1" alignment="CENTER_LEFT" layoutX="55.0" layoutY="375.0" prefHeight="35.0" prefWidth="200.0">
+                <children>
+                    <Label text="Telefono">
+                        <font>
+                            <Font size="18.0" />
+                        </font>
+                        <HBox.margin>
+                            <Insets left="10.0" />
+                        </HBox.margin>
+                    </Label>
+                    <TextField fx:id="phoneTextField" prefHeight="25.0" prefWidth="400.0">
+                        <HBox.margin>
+                            <Insets left="22.0" />
+                        </HBox.margin>
+                    </TextField>
+                </children>
+                <VBox.margin>
+                    <Insets left="25.0" />
+                </VBox.margin>
+            </HBox>
+            <Separator prefWidth="200.0" styleClass="my-separator" stylesheets="@../../../style.css" />
+            <HBox fx:id="buttonsHBox" alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                <children>
+                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#onSaveButtonAction" styleClass="my-button" stylesheets="@../../../style.css" text="Guardar">
+                        <padding>
+                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </padding>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Button fx:id="closeBtn" mnemonicParsing="false" onAction="#onCloseButtonAction" styleClass="my-button-secondary" stylesheets="@../../../style.css" text="Volver">
+                        <HBox.margin>
+                            <Insets left="25.0" right="70.0" />
+                        </HBox.margin>
+                        <padding>
+                            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                        </padding>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+   <VBox fx:id="listPersonsPanel" prefHeight="200.0" prefWidth="100.0" styleClass="my-background" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label styleClass="my-title" stylesheets="@../../../style.css" text="Personas en la App">
+            <VBox.margin>
+               <Insets left="25.0" />
+            </VBox.margin>
+         </Label>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <ListView fx:id="personListView" editable="true" maxHeight="360.0" maxWidth="600.0" minHeight="346.0" minWidth="600.0" prefHeight="360.0" prefWidth="600.0" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_RIGHT" maxWidth="640.0" minWidth="640.0" prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Button alignment="CENTER_RIGHT" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../../style.css" text="Guardar">
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="removeSelectedBtn" mnemonicParsing="false" onAction="#OnRemoveSelecteditemsAction" styleClass="my-button-remove" stylesheets="@../../../style.css" text="Eliminar">
+                  <HBox.margin>
+                     <Insets right="20.0" />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="backBtnListPeople" mnemonicParsing="false" onAction="#OnBackBtnListPeopleAction" styleClass="my-button-secondary" stylesheets="@../../../style.css" text="Volver">
+                  <HBox.margin>
+                     <Insets right="25.0" />
+                  </HBox.margin>
+               </Button>
+            </children>
+            <VBox.margin>
+               <Insets right="35.0" />
+            </VBox.margin>
+         </HBox>
+      </children>
+   </VBox>
+   <GridPane fx:id="startPanel" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="my-background" stylesheets="@../../../style.css" visible="false">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.66668701171875" minWidth="10.0" prefWidth="321.33331298828125" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.66668701171875" minWidth="10.0" prefWidth="318.66668701171875" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="182.66664123535156" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+       <RowConstraints maxHeight="240.0" minHeight="10.0" prefHeight="240.0" vgrow="SOMETIMES" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <Label alignment="CENTER" prefHeight="93.0" prefWidth="640.0" text="DAW People App" textAlignment="JUSTIFY" textFill="#2e04e9" GridPane.columnSpan="2" GridPane.hgrow="ALWAYS">
+            <font>
+               <Font size="64.0" />
+            </font>
+         </Label>
+         <Separator prefWidth="200.0" styleClass="my-separator" stylesheets="@../../../style.css" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+         <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#OnRegisterBtnAction" styleClass="my-button" stylesheets="@../../../style.css" text="Registrar" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+         <Button fx:id="viewPeopleBtn" mnemonicParsing="false" onAction="#onViewPeopleAction" styleClass="my-button" stylesheets="@../../../style.css" text="Ver personas" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+      </children>
+   </GridPane>
+</AnchorPane>

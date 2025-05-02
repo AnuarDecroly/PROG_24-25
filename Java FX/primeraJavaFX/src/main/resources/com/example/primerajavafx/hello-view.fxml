@@ -3,17 +3,38 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import org.kordamp.bootstrapfx.BootstrapFX?>
+<?import org.kordamp.bootstrapfx.*?>
 
 <VBox alignment="CENTER" minHeight="400" minWidth="400" prefHeight="400" prefWidth="400" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.primerajavafx.HelloController">
     <stylesheets>
-        <BootstrapFX fx:factory="bootstrapFXStylesheet"/>
+        <BootstrapFX fx:factory="bootstrapFXStylesheet" />
     </stylesheets>
 
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
 
+   <GridPane prefHeight="300.0" prefWidth="300.0">
+      <children>
+          <Button alignment="CENTER" onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="89.0" styleClass="btn-danger" text="Hello!" GridPane.rowIndex="1" />
+          <Button alignment="CENTER" prefHeight="26.0" prefWidth="92.0" styleClass="btn-info" text="Hello!" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+         <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="2" GridPane.columnSpan="2" />
+      </children>
+
+      <columnConstraints>
+         <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+
+      </columnConstraints>
+      <rowConstraints>
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints minHeight="10.0" prefHeight="30.0" />
+         <RowConstraints />
+      </rowConstraints>
+   </GridPane>
     <Label fx:id="welcomeText" />
-    <Button onAction="#onHelloButtonClick" text="Hello!" styleClass="btn-danger"/>
 </VBox>

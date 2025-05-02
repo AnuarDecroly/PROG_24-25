@@ -1,0 +1,42 @@
+.my-button {
+    -fx-background-color: #1c1cb6;  /* Color de fondo del botón */
+    -fx-text-fill: white; /* Color del texto */
+    -fx-padding: 15, 15, 15 15;
+}
+
+.my-button:hover {
+    -fx-background-color: #00807c; /* Color de fondo al pasar el mouse */
+}
+
+.my-button-secondary {
+    -fx-background-color: #0f4703; /* Color de fondo del botón */
+    -fx-padding: 15, 15, 15 15; /* Color del texto */
+    -fx-text-fill: white;
+}
+.my-button-secondary:hover {
+    -fx-background-color: #222e22; /* Color de fondo al pasar el mouse */
+}
+
+.my-button-remove {
+    -fx-background-color: #831717; /* Color de fondo del botón */
+    -fx-padding: 15, 15, 15 15; /* Color del texto */
+    -fx-text-fill: white;
+}
+.my-button-remove:hover {
+    -fx-background-color: #704046; /* Color de fondo al pasar el mouse */
+}
+
+.my-background {
+    -fx-background-color: #a7a7c6;
+}
+
+.my-title {
+
+    -fx-text-fill: #1c1cb6;
+    -fx-font: "Arial Black";
+    -fx-font-size: 48;
+}
+
+.my-separator {
+    -fx-background-color: #030340;
+}

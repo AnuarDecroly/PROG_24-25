@@ -56,4 +56,13 @@ public class Persona {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre = '" + nombre + '\'' +
+                ", Apellido = '" + apellido + '\'' +
+                ", Edad = " + edad +
+                ", Email =' " + email + '\'' +
+                ", Telefono = '" + telefono;
+    }
 }
