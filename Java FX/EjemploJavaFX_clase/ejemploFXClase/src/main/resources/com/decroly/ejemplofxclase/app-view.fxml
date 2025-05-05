@@ -173,7 +173,7 @@
          </HBox>
          <HBox alignment="CENTER_RIGHT" maxWidth="640.0" minWidth="640.0" prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Button alignment="CENTER_RIGHT" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../../style.css" text="Guardar">
+               <Button fx:id="SavePeopleBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../../style.css" text="Guardar">
                   <HBox.margin>
                      <Insets right="20.0" />
                   </HBox.margin>

@@ -7,9 +7,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -54,6 +56,14 @@ public class MainController implements Initializable {
     @FXML
     private ListView<Persona> personListView;
 
+
+    //Botones
+    @FXML
+    private Button SavePeopleBtn;
+
+    @FXML
+    private Button removeSelectedBtn;
+
     //Eventos
     @FXML
     protected void onSaveButtonAction(ActionEvent event){
@@ -66,8 +76,8 @@ public class MainController implements Initializable {
             person.setEdad(Integer.parseInt(ageTextField.getText()));
             person.setTelefono(phoneTextField.getText());
 
-            mainPanel.setVisible(false);
-            listPersonsPanel.setVisible(true);
+            //Ir al panel de la lista de personas
+            selectPanelVisible(2);
 
             personas.add(person);
 
@@ -83,34 +93,30 @@ public class MainController implements Initializable {
 
     @FXML
     protected void onCloseButtonAction(ActionEvent event){
-        startPanel.setVisible(true);
-        mainPanel.setVisible(false);
-        listPersonsPanel.setVisible(false);
+        //Ir al panel inicial
+        selectPanelVisible(0);
 
     }
 
     @FXML
     protected void OnRegisterBtnAction(ActionEvent event){
-        startPanel.setVisible(false);
-        mainPanel.setVisible(true);
-        listPersonsPanel.setVisible(false);
-
+        //Ir al panel de registro
+        selectPanelVisible(1);
         this.clearFields();
     }
 
     @FXML
     protected void onViewPeopleAction(ActionEvent event){
-        startPanel.setVisible(false);
-        mainPanel.setVisible(false);
-        listPersonsPanel.setVisible(true);
+
+        
+        //Ir al panel de la lista de personas
+        selectPanelVisible(2);
     }
 
     @FXML
     protected void OnBackBtnListPeopleAction(ActionEvent event){
-        startPanel.setVisible(true);
-        mainPanel.setVisible(false);
-        listPersonsPanel.setVisible(false);
-
+        //Ir al panel de inicio
+        selectPanelVisible(0);
         this.clearFields();
     }
 
@@ -126,6 +132,41 @@ public class MainController implements Initializable {
         emailTextField.setText("");
         ageTextField.setText("");
         phoneTextField.setText("");
+    }
+
+    private void selectPanelVisible(int panel){
+        switch (panel) {
+
+            case 0:
+                startPanel.setVisible(true);
+                mainPanel.setVisible(false);
+                listPersonsPanel.setVisible(false);
+                break;
+
+            case 1:
+                startPanel.setVisible(false);
+                mainPanel.setVisible(true);
+                listPersonsPanel.setVisible(false);
+                break;
+
+            case 2:
+                startPanel.setVisible(false);
+                mainPanel.setVisible(false);
+                listPersonsPanel.setVisible(true);
+                break;
+
+            case 3:
+                startPanel.setVisible(true);
+                mainPanel.setVisible(false);
+                listPersonsPanel.setVisible(false);
+                break;
+
+            default:
+                startPanel.setVisible(true);
+                mainPanel.setVisible(false);
+                listPersonsPanel.setVisible(false);
+
+        }
     }
 
     @Override
@@ -145,8 +186,36 @@ public class MainController implements Initializable {
 
         personListView.setItems(personas);
 
+        SavePeopleBtn.setDisable(true);
+        removeSelectedBtn.setDisable(true);
+
+        personListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null) {
+                SavePeopleBtn.setDisable(true);
+                removeSelectedBtn.setDisable(true);
+            }
+            else{
+                SavePeopleBtn.setDisable(false);
+                removeSelectedBtn.setDisable(false);
+            }
+        });
 
 
 
+        nameTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validateName(nameTextField.getText())){
+                    nameTextField.setText("");
+                    nameTextField.setPromptText("Valor incorrecto");
+                }
+            }
+        });
+
+
+
+    }
+
+    private boolean validateName(String name){
+        return name.length() > 3;
     }
 }
