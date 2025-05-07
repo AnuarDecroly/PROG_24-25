@@ -20,11 +20,12 @@ import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
+    //Objetos para controlar las entidades Persona
     private Persona person;
     private ObservableList<Persona> personas = FXCollections.observableArrayList();
 
 
-    //Panel principal
+    //Paneles de la aplicacion
     @FXML
     private VBox mainPanel;
 
@@ -51,25 +52,30 @@ public class MainController implements Initializable {
     @FXML
     private TextField phoneTextField;
 
+    @FXML
+    private TextField dniTextField;
+
 
     //ListView
     @FXML
     private ListView<Persona> personListView;
 
 
-    //Botones
+    //Botones del panel de ListPeople
     @FXML
     private Button SavePeopleBtn;
 
     @FXML
     private Button removeSelectedBtn;
 
-    //Eventos
+
+    //Eventos de los botones
     @FXML
     protected void onSaveButtonAction(ActionEvent event){
         person = new Persona();
 
         try{
+            person.setDni(dniTextField.getText());
             person.setNombre(nameTextField.getText());
             person.setApellido(surNameTextField.getText());
             person.setEmail(emailTextField.getText());
@@ -108,7 +114,6 @@ public class MainController implements Initializable {
     @FXML
     protected void onViewPeopleAction(ActionEvent event){
 
-        
         //Ir al panel de la lista de personas
         selectPanelVisible(2);
     }
@@ -126,6 +131,103 @@ public class MainController implements Initializable {
     }
 
 
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        startPanel.setVisible(true);
+        mainPanel.setVisible(false);
+        listPersonsPanel.setVisible(false);
+
+
+        nameTextField.setPromptText("Nombre");
+        ageTextField.setPromptText("Edad");
+        surNameTextField.setPromptText("Apellidos");
+        emailTextField.setPromptText("Email");
+        phoneTextField.setPromptText("Telefono");
+        dniTextField.setPromptText("Dni");
+
+
+        personListView.setItems(personas);
+
+        SavePeopleBtn.setDisable(true);
+        removeSelectedBtn.setDisable(true);
+
+        //Añadir listener a la propiedad de elemento seleccionado de la lista
+        personListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == null) {
+                SavePeopleBtn.setDisable(true);
+                removeSelectedBtn.setDisable(true);
+            }
+            else{
+                SavePeopleBtn.setDisable(false);
+                removeSelectedBtn.setDisable(false);
+            }
+        });
+
+
+    //Añadir listeners a la propiedades de focus de los TextFields
+        nameTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validateName(nameTextField.getText())){
+                    nameTextField.setText("");
+                    nameTextField.setPromptText("Valor incorrecto");
+                }
+            }
+        });
+
+        surNameTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validateName(surNameTextField.getText())){
+                    surNameTextField.setText("");
+                    surNameTextField.setPromptText("Valor incorrecto");
+                }
+            }
+        });
+
+        emailTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validateEmail(emailTextField.getText())){
+                    emailTextField.setText("");
+                    emailTextField.setPromptText("Valor incorrecto");
+                }
+            }
+        });
+
+        ageTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validateAge(ageTextField.getText())){
+                    ageTextField.setText("");
+                    ageTextField.setPromptText("Valor incorrecto");
+                }
+            }
+        });
+
+        phoneTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validatePhone(phoneTextField.getText())){
+                    phoneTextField.setText("");
+                    phoneTextField.setPromptText("Valor incorrecto");
+                }
+
+            }
+        });
+
+        dniTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
+            if(!newValue){
+                if(!validateDni(dniTextField.getText())){
+                    dniTextField.setText("");
+                    dniTextField.setPromptText("Valor incorrecto");
+                }
+            }
+        });
+
+
+
+    }//metodo initialize
+
+    // Metodos internos para realizar operaciones
     private void clearFields() {
         nameTextField.setText("");
         surNameTextField.setText("");
@@ -169,53 +271,24 @@ public class MainController implements Initializable {
         }
     }
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        startPanel.setVisible(true);
-        mainPanel.setVisible(false);
-        listPersonsPanel.setVisible(false);
-
-
-        nameTextField.setPromptText("Nombre");
-        ageTextField.setPromptText("Edad");
-        surNameTextField.setPromptText("Apellidos");
-        emailTextField.setPromptText("Email");
-        phoneTextField.setPromptText("Telefono");
-
-
-        personListView.setItems(personas);
-
-        SavePeopleBtn.setDisable(true);
-        removeSelectedBtn.setDisable(true);
-
-        personListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-            if (newValue == null) {
-                SavePeopleBtn.setDisable(true);
-                removeSelectedBtn.setDisable(true);
-            }
-            else{
-                SavePeopleBtn.setDisable(false);
-                removeSelectedBtn.setDisable(false);
-            }
-        });
-
-
-
-        nameTextField.focusedProperty().addListener((observable, oldValue, newValue) -> {
-            if(!newValue){
-                if(!validateName(nameTextField.getText())){
-                    nameTextField.setText("");
-                    nameTextField.setPromptText("Valor incorrecto");
-                }
-            }
-        });
-
-
-
+    private boolean validateName(String name){
+        return (name.length() > 3 && name.matches("[A-Z]{1}[a-z]{2,25}"));
     }
 
-    private boolean validateName(String name){
-        return name.length() > 3;
+    private boolean validatePhone(String phone){
+        return phone.matches("[1-9]{9}");
+    }
+
+    private boolean validateEmail(String email){
+        String emailPattern = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+        return email.matches(emailPattern);
+    }
+
+    private boolean validateAge(String age){
+        return age.matches("[1-9]{1,3}");
+    }
+
+    private boolean validateDni(String dni){
+        return dni.matches("[0-9]{7,8}[A-Z a-z]");
     }
 }

@@ -18,7 +18,7 @@
 <AnchorPane maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="my-background" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.decroly.ejemplofxclase.MainController">
 
 
-    <VBox fx:id="mainPanel" alignment="CENTER" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="my-background" stylesheets="@../../../style.css" visible="false">
+    <VBox fx:id="mainPanel" alignment="CENTER" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="my-background" stylesheets="@../../../style.css">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
@@ -73,6 +73,26 @@
                     <Insets left="25.0" />
                 </VBox.margin>
             </HBox>
+         <HBox fx:id="surNameHBox1" alignment="CENTER_LEFT" layoutX="55.0" layoutY="191.0" prefHeight="35.0" prefWidth="200.0">
+            <children>
+               <Label text="DNI">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+                  <HBox.margin>
+                     <Insets left="10.0" />
+                  </HBox.margin>
+               </Label>
+               <TextField fx:id="dniTextField" prefHeight="25.0" prefWidth="400.0">
+                  <HBox.margin>
+                     <Insets left="60.0" />
+                  </HBox.margin>
+               </TextField>
+            </children>
+            <VBox.margin>
+               <Insets left="25.0" />
+            </VBox.margin>
+         </HBox>
             <HBox fx:id="ageHBox" alignment="CENTER_LEFT" layoutX="55.0" layoutY="319.0" prefHeight="35.0" prefWidth="200.0">
                 <children>
                     <Label text="Edad">
@@ -159,7 +179,7 @@
             </HBox>
         </children>
     </VBox>
-   <VBox fx:id="listPersonsPanel" prefHeight="200.0" prefWidth="100.0" styleClass="my-background" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <VBox fx:id="listPersonsPanel" prefHeight="200.0" prefWidth="100.0" styleClass="my-background" stylesheets="@../../../style.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
          <Label styleClass="my-title" stylesheets="@../../../style.css" text="Personas en la App">
             <VBox.margin>
@@ -173,7 +193,7 @@
          </HBox>
          <HBox alignment="CENTER_RIGHT" maxWidth="640.0" minWidth="640.0" prefHeight="100.0" prefWidth="200.0">
             <children>
-               <Button fx:id="SavePeopleBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../../style.css" text="Guardar">
+               <Button fx:id="SavePeopleBtn" alignment="CENTER_RIGHT" mnemonicParsing="false" styleClass="my-button" stylesheets="@../../../style.css" text="Editar">
                   <HBox.margin>
                      <Insets right="20.0" />
                   </HBox.margin>

@@ -1,13 +1,15 @@
 package com.decroly.model;
 
 public class Persona {
+    private String dni;
     private String nombre;
     private String apellido;
     private int edad;
     private String email;
     private String telefono;
 
-    public Persona(String nombre, String apellido, int edad, String email, String telefono) {
+    public Persona(String dni,String nombre, String apellido, int edad, String email, String telefono) {
+        this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -16,6 +18,13 @@ public class Persona {
     }
 
     public Persona() {}
+
+    public String getDni() {
+        return dni;
+    }
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
 
     public String getNombre() {
         return nombre;
@@ -61,6 +70,7 @@ public class Persona {
     public String toString() {
         return "Nombre = '" + nombre + '\'' +
                 ", Apellido = '" + apellido + '\'' +
+                ", DNI = " + dni +
                 ", Edad = " + edad +
                 ", Email =' " + email + '\'' +
                 ", Telefono = '" + telefono;
