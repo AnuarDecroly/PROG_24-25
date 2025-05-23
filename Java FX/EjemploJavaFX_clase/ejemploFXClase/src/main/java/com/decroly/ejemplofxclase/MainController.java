@@ -1,5 +1,6 @@
 package com.decroly.ejemplofxclase;
 
+import com.decroly.Utils.FileUtils;
 import com.decroly.model.Persona;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -16,6 +17,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
@@ -34,7 +38,6 @@ public class MainController implements Initializable {
 
     @FXML
     private GridPane startPanel;
-
 
     //Campos de textos del formulario
     @FXML
@@ -55,11 +58,9 @@ public class MainController implements Initializable {
     @FXML
     private TextField dniTextField;
 
-
     //ListView
     @FXML
     private ListView<Persona> personListView;
-
 
     //Botones del panel de ListPeople
     @FXML
@@ -75,6 +76,15 @@ public class MainController implements Initializable {
         person = new Persona();
 
         try{
+            Persona p = Persona.builder().
+                    edad(30).
+                    apellido("Khan").
+                    nombre("Anuar").
+                    dni("7200000T").
+                    telefono("123456789").
+                    build();
+
+
             person.setDni(dniTextField.getText());
             person.setNombre(nameTextField.getText());
             person.setApellido(surNameTextField.getText());
@@ -130,9 +140,19 @@ public class MainController implements Initializable {
         boolean remove = personas.remove(personListView.getSelectionModel().getSelectedItem());
     }
 
+    @FXML
+    protected void OnBtnExitApp(ActionEvent event){
+        Platform.exit();
+    }
+
+    @FXML
+    protected void OnBtnSaveInFile(ActionEvent event){
+        FileUtils.writeFile("export_Personas.dat",new LinkedList<>(personas));
+    }
 
 
 
+    //Metodo initialize que se ejecuta al iniciarse el MainController
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -148,7 +168,8 @@ public class MainController implements Initializable {
         phoneTextField.setPromptText("Telefono");
         dniTextField.setPromptText("Dni");
 
-
+        List<Persona> people = loadFilePeople("export_Personas.dat");
+        personas.addAll(people);
         personListView.setItems(personas);
 
         SavePeopleBtn.setDisable(true);
@@ -227,6 +248,10 @@ public class MainController implements Initializable {
 
     }//metodo initialize
 
+    private List<Persona> loadFilePeople(String fileName) {
+        return FileUtils.readFile(fileName);
+    }
+
     // Metodos internos para realizar operaciones
     private void clearFields() {
         nameTextField.setText("");
@@ -234,6 +259,7 @@ public class MainController implements Initializable {
         emailTextField.setText("");
         ageTextField.setText("");
         phoneTextField.setText("");
+        dniTextField.setText("");
     }
 
     private void selectPanelVisible(int panel){

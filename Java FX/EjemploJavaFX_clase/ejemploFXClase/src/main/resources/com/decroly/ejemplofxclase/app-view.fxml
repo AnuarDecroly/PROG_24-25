@@ -18,7 +18,7 @@
 <AnchorPane maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="my-background" stylesheets="@../../../style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.decroly.ejemplofxclase.MainController">
 
 
-    <VBox fx:id="mainPanel" alignment="CENTER" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="my-background" stylesheets="@../../../style.css">
+    <VBox fx:id="mainPanel" alignment="CENTER" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" spacing="20.0" styleClass="my-background" stylesheets="@../../../style.css" visible="false">
         <padding>
             <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
         </padding>
@@ -215,7 +215,7 @@
          </HBox>
       </children>
    </VBox>
-   <GridPane fx:id="startPanel" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="my-background" stylesheets="@../../../style.css" visible="false">
+   <GridPane fx:id="startPanel" maxHeight="480.0" maxWidth="640.0" minHeight="480.0" minWidth="640.0" prefHeight="480.0" prefWidth="640.0" styleClass="my-background" stylesheets="@../../../style.css">
      <columnConstraints>
        <ColumnConstraints hgrow="SOMETIMES" maxWidth="386.66668701171875" minWidth="10.0" prefWidth="321.33331298828125" />
        <ColumnConstraints hgrow="SOMETIMES" maxWidth="322.66668701171875" minWidth="10.0" prefWidth="318.66668701171875" />
@@ -235,6 +235,8 @@
          <Separator prefWidth="200.0" styleClass="my-separator" stylesheets="@../../../style.css" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.valignment="TOP" />
          <Button fx:id="registerBtn" mnemonicParsing="false" onAction="#OnRegisterBtnAction" styleClass="my-button" stylesheets="@../../../style.css" text="Registrar" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
          <Button fx:id="viewPeopleBtn" mnemonicParsing="false" onAction="#onViewPeopleAction" styleClass="my-button" stylesheets="@../../../style.css" text="Ver personas" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+         <Button fx:id="btnSaveInFile" contentDisplay="CENTER" mnemonicParsing="false" onAction="#OnBtnSaveInFile" styleClass="my-button" stylesheets="@../../../style.css" text="Exportar" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+         <Button fx:id="btnExitApp" mnemonicParsing="false" onAction="#OnBtnExitApp" styleClass="my-button-remove" stylesheets="@../../../style.css" text="Salir" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
       </children>
    </GridPane>
 </AnchorPane>

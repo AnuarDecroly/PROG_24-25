@@ -1,6 +1,11 @@
 package com.decroly.model;
 
-public class Persona {
+import java.io.Serializable;
+
+public class Persona implements Serializable {
+
+    private static final long serialVersionUID = 2596243663561602159L;
+
     private String dni;
     private String nombre;
     private String apellido;
@@ -15,6 +20,15 @@ public class Persona {
         this.edad = edad;
         this.email = email;
         this.telefono = telefono;
+    }
+
+    public Persona(PersonaBuilder personaBuilder) {
+        this.dni = personaBuilder.getDni();
+        this.nombre = personaBuilder.getNombre();
+        this.apellido = personaBuilder.getApellido();
+        this.edad = personaBuilder.getEdad();
+        this.email = personaBuilder.getEmail();
+        this.telefono = personaBuilder.getTelefono();
     }
 
     public Persona() {}
@@ -75,4 +89,9 @@ public class Persona {
                 ", Email =' " + email + '\'' +
                 ", Telefono = '" + telefono;
     }
+
+    public static PersonaBuilder builder() {
+        return new PersonaBuilder();
+    }
 }
+
